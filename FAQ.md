@@ -25,7 +25,7 @@
 srand(time(NULL));   // should only be called once
 int foo = rand();      // returns a pseudo-random integer between 0 and RAND_MAX
 int bar = rand() % 55; //returns a pseudo-random integer between 0 and 54
-int baz = (rand() % 55) + 1) // returns a psuedo-random integer between 1 and 55
+int baz = (rand() % 55) + 1); // returns a psuedo-random integer between 1 and 55
 ```
 
 ##Another-C-FAQ
