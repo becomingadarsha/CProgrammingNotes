@@ -15,7 +15,7 @@
    1. Initialize the seed. 
     The seed is a number that multiplies with a couple random numbers (internally). You should use time(NULL) as the input parameter of the srand function (seed random). 
    2. Initialize the random variable with the rand() function. 
-     If you need a range (numbers 0-20 or whatever) use the modulus ( ' % ' ) 
+     If you need a range (numbers 0-20 or whatever) use the modulus ('%') 
      operator to generate your number. Example:
   
 ```c
