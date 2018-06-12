@@ -1,0 +1,160 @@
+Welcome C programmers.  This group exists to provide a knowledgeable and
+nurturing environment to anyone wanting to learn or improve their proficiency
+in using the C programming language.
+
+Please follow our group's rules.  Users who repeatedly violate these rules
+may be banned from the group without further warning.
+
+1. No spam or ads:
+
+Do not post spam or ads of any kind or links to other groups on or off
+Facebook.  This includes sharing a post you found in another group or on a
+page.  Do not post or include in a comment invitations to join another group
+on or off Facebook, except that you may direct users to our C Programming
+group on Messenger.  Do not ask users to subscribe to a YouTube channel. 
+This group does not exist to help you advertise your business or increase a
+YouTube channel's ratings.  Do not include a job offer in a post or a
+comment.  Plenty of groups exist on Facebook to handle that.
+
+The only exception to this rule is that you may post or comment about a book
+that is intended to help people learn or improve their proficiency in using
+the C programming language.
+
+All posts and comments must pertain to C.  If your post or comment has
+nothing to do with C it will not be approved.  And that means C, not C++, C#,
+HTML, Python, Ruby, Java, Javascript, or whatever else.
+
+You may, on a limited basis, discuss the differences between C and other
+programming languages.  You may include one or more links to a website in
+your post or comment as long as it pertains to C and the content is in the
+English language.
+
+2. Facebook has rules too:
+
+Do not post or include in a comment anything that violates Facebook's rules. 
+Do not post or request that someone give you a copyrighted work since openly
+doing this can get the group into trouble with Facebook.  DO NOT post or
+include in a comment any kind of nudity or pornographic content.  Yes, people
+have actually tried to post porn videos.  This violates Facebook's rules
+about nudity.  Anyone who does this will be immediately banned from the
+group.
+
+No hate speech or bullying will be tolerated.  We want all of our users to
+feel welcome.  Degrading posts or comments about things like race, color,
+national origin, ethnicity, religion, culture, political beliefs, sexual
+orientation, gender, or gender identity are strictly forbidden.
+
+We require that all of our users show proper respect for one another.  Users
+are not allowed to stoop to name calling or posting or commenting with
+defamatory content.  Healthy debates are allowed, but insulting or degrading
+others is not.  Use of profane or obscene language is not permitted.
+
+3. Use English:
+
+Since this group is used by people all over the world all posts and comments
+must be made in the English language including anything that a link points
+to.  Translation software is often freely available to anyone needing help
+translating their content into English.
+
+Including a link in a post or a comment that points to content that has very
+poor use of the English language or includes audio that includes speech that
+uses a heavy accent that makes it difficult to understand is not allowed and
+will be rejected.
+
+4. No personal details:
+
+Do not write a post or a comment that includes personal details like a phone
+number or an email address, whether it belongs to you or someone else.  If
+you wish, you may list such information on your profile page and direct users
+to that.
+
+5. Use a pasting service:
+
+Users are allowed to include up to eight (8) lines of code as text in a post
+or a comment including pseudocode.  A line is a line of text as rendered by
+Facebook when printed to the user's screen when using a mobile device capable
+of displaying at least eighty columns per line when used in portrait mode.  A
+line may include multiple code statements.  Using an opening or closing curly
+brace on a line by itself counts as a line of code.
+
+Anyone using more than eight lines of code listed as text must use a pasting
+service.  A list of services is included below.  You may use any pasting
+service that performs this function, provided the reader is not required to
+create an account or log in to access the content, even if the service is not
+included in this list.
+
+Make sure that everyone has read access to the content that your link points
+to when you use a pasting service.  Management must be able to review the
+content.  If they can not do so, your post or comment will be rejected.
+
+6. Do your own homework:
+
+This is not a homework club.  You are expected to do your own homework.  You
+may seek advice if you are struggling.  Your post must show the effort that
+you have made thus far.  Do not ask for information that is easily found by
+using a search engine.  Do not ask users to write your program for you.  It
+is permissible to ask for help with a particular concept or idea, but you
+must not request that another user do your homework for you.
+
+Linux man pages are available online.  Write "man function_name" (without the
+quotes) into your web browser's URL box and select the desired option.  If
+you need help with this, such as identifying the name of the desired function
+then ask.  We are here to help you learn.  We are not here to do everything
+for you.
+
+7. We don't play "guess the output":
+
+Do not post code and then ask users to guess the output.  If you want to know
+what a program does, compile it and run it yourself.  If it will not compile
+then post the compiler's output and ask for help.  Do not post a long list of
+compiler errors.  If your compiler produces more than eight (8) lines of
+output when displaying error messages, copy them into a text file and use a
+pasting service.
+
+8. Read the group's FAQs:
+
+Do not post something like, "Hi, I'm new here and I want to learn how to use
+C.  Can someone help me?"  Also, please refrain from posting something like,
+"Can anyone recommend a good book that will teach me how to use C?"  Or, "Can
+anyone recommend a good C compiler or IDE?"  Please visit our group's GitHub
+site and read the lists of frequently asked questions (FAQs) at
+https://github.com/CProgrammingFBGroup/CProgrammingNotes/blob/master/FAQ.md
+and http://c-faq.com/questions.html.  Do not post something like, "Can I ask
+a question?"  Post your actual question.
+
+9. Comments must be relevant to the post:
+
+Do not write a comment about something unrelated to the post that you add it
+to.  Write your own post.  Do not attempt to get around the post approval
+process by writing your post as an unrelated comment made to someone else's
+post.  Pending posts are usually approved or rejected in less than a day.  If
+more than twenty four hours have passed since you submitted your post and you
+still can't find it listed with the others then your post was probably
+rejected.
+
+10. Don't hide from management:
+
+Do not block members of this group's management on Facebook to hide your
+posts or comments from them.
+
+11. No YouTube videos:
+
+Do not include links to a YouTube video in a post or a comment.  Videos in
+YouTube often show a video of someone typing in source code which can be read
+just as easily from a text file.  This group does not exist to help raise the
+ratings on someone's YouTube channel.  Plenty of other resources exist that
+don't require watching a YouTube video.
+
+Our group's GitHub site can be found at:
+https://github.com/CProgrammingFBGroup/CProgrammingNotes
+
+This is a list of free pasting services:
+
+http://codepad.org
+https://codeshare.io
+https://drive.google.com
+https://github.com
+https://ideone.com
+https://pastebin.com
+
+Written on Wednesday June 6, 2018 at 6:27 PM UTC.
