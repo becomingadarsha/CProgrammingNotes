@@ -46,6 +46,62 @@ it sets up an emulated dos enviornment for you to actually run your programs). T
 makes the user spend twice the time learning things, when they could have learned it 
 correctly the first time.
 
+5. How do I print a prompt and then read input on the same line?
+
+Print the prompt using printf() and use fflush() afterwards.  It is necessary to call fflush() because printf() uses buffered I/O which will only write the data in the buffer when enough data has accumulated or when a newline character is encountered.
+
+```c
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+int main( void )
+{
+     char str[ 101 ];
+     int loop, size;
+
+     printf( "Please enter your choice: >> " );
+     fflush( stdout );
+     do
+     {
+          loop = 0;
+          if ( fgets( str, 100, stdin ) == NULL )
+          {
+               printf( "Sorry, something went wrong.\n" );
+               exit( EXIT_FAILURE )
+          }
+          if ( str[ 0 ] == 0 )
+          {
+               printf( "Sorry, no input received.\n" );
+               exit( EXIT_FAILURE );
+          }
+          size = strlen( str );
+          if ( size == 1 && str[ 0 ] == '\n' )
+          {
+          
+               /* Silently loop around again. */
+               
+               loop = 1;
+          }
+          size--;
+          if ( str[ size ] == '\n' )
+          {
+          
+               /* Remove the newline. */
+               
+               str[ size ] = 0;
+          }
+     }    while( loop == 1 );
+     
+     /* Now you may use the input... */
+     
+     /* Later on... */
+     
+     exit( EXIT_SUCCESS );
+}
+```
+
+The use of the loop variable allows the do-while() loop to silently loop around for a second pass if a stray newline character is left in the stdin buffer.
 
 ## Another-C-FAQ
 
