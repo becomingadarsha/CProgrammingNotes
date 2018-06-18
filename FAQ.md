@@ -68,7 +68,7 @@ int main( void )
           if ( fgets( str, 100, stdin ) == NULL )
           {
                printf( "Sorry, something went wrong.\n" );
-               exit( EXIT_FAILURE )
+               exit( EXIT_FAILURE );
           }
           if ( str[ 0 ] == 0 )
           {
