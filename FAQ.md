@@ -83,13 +83,16 @@ int main( void )
                
                loop = 1;
           }
-          size--;
-          if ( str[ size ] == '\n' )
+          else
           {
+               size--;
+               if ( str[ size ] == '\n' )
+               {
           
-               /* Remove the newline. */
+                    /* Remove the newline. */
                
-               str[ size ] = 0;
+                    str[ size ] = 0;
+               }
           }
      }    while( loop == 1 );
      
