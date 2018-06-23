@@ -142,6 +142,13 @@ Example: show_args John
 
 Now argc will equal two.  argv[ 0 ] will hold "show_args" and argv[ 1 ] will hold "John".  argv[ 1 ][ 2 ] will hold 'h'.
 
+8. How can I get the compiler to store my variable in a register in the CPU?
+
+You can define an int as: register int count;
+This is a reserved keyword that tells the compiler to try to use a register when using the variable 'count'.
+
+It does not guarantee that the variable will use a register, but it can increase the likelihood.  Good compilers should optimize the output code that they produce to do things like this anyway.
+
 ## Another-C-FAQ
 
    [C-FAQ](http://c-faq.com/questions.html)
