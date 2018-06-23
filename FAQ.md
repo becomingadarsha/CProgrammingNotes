@@ -110,6 +110,38 @@ The use of the loop variable allows the do-while() loop to silently loop around 
 
 Use scanf( "%[^\n]s", str ); where str is a character array with enough room to hold the data.  See also: fgets().
 
+7. How can I pass arguments to my C program on the command line at runtime?
+
+Use the argument count and argument values variables in main().
+
+```c
+#include <stdio.h>
+#include <stdlib.h>
+
+int main( int argc, char **argv )
+{
+     int count;
+     
+     if ( argc < 2 )
+     {
+          printf( "No command line arguments supplied.\n" );
+          exit( EXIT_FAILURE )
+     }
+     printf( "You used:\n\n" );
+     for( count = 1; count < argc; count++ )
+     {
+          printf( argv[ %d ]: \"%s\"\n", count, argv[ count ] );
+     }
+     return 0;
+}
+```
+
+If the program is run without any command line arguments then argc will be 1.  The name of the program will be stored in argv[ 0 ].  If you use three command line arguments, argc will be four, one for the name of the program, plus three because of the three command line arguments.  The valid array elements in argv will run from zero to ( argc - 1 ).  The variable argv is a two dimensional character array, also known as an array of strings.  If you ran the code listed above with the name show_args and the argument John then you could access the letter J with argv[ 1 ][ 0 ].
+
+Example: show_args John
+
+Now argc will equal two.  argv[ 0 ] will hold "show_args" and argv[ 1 ] will hold "John".  argv[ 1 ][ 2 ] will hold 'h'.
+
 ## Another-C-FAQ
 
    [C-FAQ](http://c-faq.com/questions.html)
