@@ -106,6 +106,10 @@ int main( void )
 
 The use of the loop variable allows the do-while() loop to silently loop around for a second pass if a stray newline character is left in the stdin buffer.
 
+6. How do I use scanf() to read multiple words instead of just the first word in a character string?
+
+Use scanf( "%[^\n]s", str ); where str is a character array with enough room to hold the data.  See also: fgets().
+
 ## Another-C-FAQ
 
    [C-FAQ](http://c-faq.com/questions.html)
