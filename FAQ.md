@@ -136,7 +136,7 @@ int main( int argc, char **argv )
 }
 ```
 
-If the program is run without any command line arguments then argc will be 1.  The name of the program will be stored in argv[ 0 ].  If you use three command line arguments, argc will be four, one for the name of the program, plus three because of the three command line arguments.  The valid array elements in argv will run from zero to ( argc - 1 ).  The variable argv is a two dimensional character array, also known as an array of strings.  If you ran the code listed above with the name show_args and the argument John then you could access the letter J with argv[ 1 ][ 0 ].
+If the program is run without any command line arguments then argc will be 1.  The name of the program will be stored in argv[ 0 ].  If you use three command line arguments argc will be four, one for the name of the program, plus three because of the three command line arguments.  The valid array elements in argv will run from zero to ( argc - 1 ).  The variable argv is a two dimensional character array, also known as an array of strings.  If you ran the code listed above with the name show_args and the argument John then you could access the letter J with argv[ 1 ][ 0 ].
 
 Example: show_args John
 
