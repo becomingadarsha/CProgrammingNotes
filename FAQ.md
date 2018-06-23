@@ -125,12 +125,12 @@ int main( int argc, char **argv )
      if ( argc < 2 )
      {
           printf( "No command line arguments supplied.\n" );
-          exit( EXIT_FAILURE )
+          exit( EXIT_FAILURE );
      }
      printf( "You used:\n\n" );
      for( count = 1; count < argc; count++ )
      {
-          printf( argv[ %d ]: \"%s\"\n", count, argv[ count ] );
+          printf( "argv[ %d ]: \"%s\"\n", count, argv[ count ] );
      }
      return 0;
 }
