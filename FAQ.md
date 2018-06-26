@@ -152,6 +152,7 @@ It does not guarantee that the variable will use a register, but it can increase
 # 9. How can I clear the screen in C?
 
 You can use: printf( "%c[1;1H%c[2J", 27, 27 );
+
 You might want to write that into a function.
 
 ## Another-C-FAQ
