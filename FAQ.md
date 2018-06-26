@@ -149,6 +149,11 @@ This is a reserved keyword that tells the compiler to try to use a register when
 
 It does not guarantee that the variable will use a register, but it can increase the likelihood.  Good compilers should optimize the output code that they produce to do things like this anyway.
 
+# 9. How can I clear the screen in C?
+
+You can use: printf( "%c[1;1H%c[2J", 27, 27 );
+You might want to write that into a function.
+
 ## Another-C-FAQ
 
    [C-FAQ](http://c-faq.com/questions.html)
