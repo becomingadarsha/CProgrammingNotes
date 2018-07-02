@@ -7,7 +7,7 @@
      This program is intended to serve as a simple example rather
      than including every function included in the word count program
      documented in the Linux man page.  It would be easy enough to
-     add the extra functioning so it could do, but I didn't believe
+     add the extra functioning so it could do so, but I didn't believe
      it would be worth the work to add functioning that I would never
      be likely to use.
     
