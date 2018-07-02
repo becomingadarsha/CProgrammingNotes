@@ -109,7 +109,7 @@ int main( int argc, char **argv )
 
      /* If the input didn't end with a newline... */
 
-     if ( last_newline != bytes )
+     if ( last_newline != bytes && bytes != 0 )
      {
           lines++;
      }
