@@ -3,6 +3,8 @@
 # 1. What books or other resources should I use to learn C?
   
    You can find a list of resources [here](https://github.com/aleksandar-todorovic/awesome-c#learning-reference-and-tutorials)
+   
+   You can also legally download a free ebook [here](https://goalkicker.com/CBook)
  
 # 2. What compiler is best?
 
