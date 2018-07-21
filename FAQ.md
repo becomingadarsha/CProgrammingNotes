@@ -110,7 +110,9 @@ The use of the loop variable allows the do-while() loop to silently loop around 
 
 # 6. How do I use scanf() to read multiple words instead of just the first word in a character string?
 
-It was once said that using scanf( "%[^\n]s", str ); would work; however, that does not appear to be the case.  Please have a look at the open source library file in examples/read_stdin/ for a good solution to this problem.  After the whole line has been read it can be processed with sscanf().
+You can use scanf( "%[^\n]", str );  If scanf() returns right away without giving you a chance to enter any input then there may be a newline character in the input buffer which can be cleared by using ch = ( char )fgetc( stdin ); before calling scanf().
+
+An alternative option to using scanf() may be found in examples/read_stdin/ which uses fgets().
 
 # 7. How can I pass arguments to my C program on the command line at runtime?
 
