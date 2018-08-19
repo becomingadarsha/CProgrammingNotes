@@ -26,8 +26,8 @@
 
 */
 
-#ifndef _BINARY_STRING
-#define _BINARY_STRING
+#ifndef _BINARY_STRING_C
+#define _BINARY_STRING_C
 
 #include <stdio.h>
 
