@@ -79,7 +79,8 @@ int display_stat_structure( const struct stat *ptr )
 
      /* Number of 512 byte blocks allocated: */
 
-     printf( " st_blocks: %lld\n", ptr->st_blocks );
+     printf( " st_blocks: %lld, (%lu bytes)\n",
+             ptr->st_blocks, ( ptr->st_blocks * 512 ) );
 
      /* Last access time: */
 
