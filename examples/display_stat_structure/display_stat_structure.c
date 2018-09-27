@@ -2,9 +2,9 @@
 
      display_stat_structure.c
 
-     Displays the structure from stat().
-     Returns 0 for success and -1 for an error condition.
      Written by Matthew Campbell.  (12-15-17)
+
+     Updated on Wednesday September 26, 2018 to include mode_string().
 
 */
 
@@ -32,12 +32,26 @@
 	( ( unsigned long int )( ( ( ( x ) >> 12 ) & 0xffffff00 ) | ( ( x ) & \
  0x000000ff ) ) )
 
+/* Function prototypes: */
+
+      int   display_stat_structure( const struct stat *ptr );
+      void  init_stat_structure( struct stat *ptr );
+const char *mode_string( mode_t mode );
+
+/* Function definitions: */
+
+/*
+
+     Displays the structure used by stat().
+     Returns 0 for success or 1 if an error occurs.
+
+*/
+
 int display_stat_structure( const struct stat *ptr )
 {
-
      if ( ptr == NULL )
      {
-          return ( -1 );  /* Error. */
+          return 1;  /* Error. */
      }
 
      /* ID of device containing file: */
@@ -51,7 +65,8 @@ int display_stat_structure( const struct stat *ptr )
 
      /* Protection bits: */
 
-     printf( "   st_mode: %lo\n", ptr->st_mode );
+     printf( "   st_mode: %lo, string: %s\n", ptr->st_mode,
+             mode_string( ptr->st_mode ) );
 
      /* Number of hard links to this file: */
 
@@ -97,6 +112,12 @@ int display_stat_structure( const struct stat *ptr )
      return 0;  /* Success. */
 }
 
+/*
+
+     Initializes all the structure members in the structure used by stat().
+
+*/
+
 void init_stat_structure( struct stat *ptr )
 {
      if ( ptr == NULL )
@@ -104,7 +125,7 @@ void init_stat_structure( struct stat *ptr )
           return;
      }
      ptr->st_dev = 0;
-     ptr->st_ino =0;
+     ptr->st_ino = 0;
      ptr->st_mode = 0;
      ptr->st_nlink = 0;
      ptr->st_uid = 0;
@@ -117,6 +138,183 @@ void init_stat_structure( struct stat *ptr )
      ptr->st_mtime = 0;
      ptr->st_ctime = 0;
      return;
+}
+
+/*
+
+     Converts 'mode' to the string used by /bin/ls.
+
+*/
+
+const char *mode_string( mode_t mode )  /* mode_t is unsigned long int */
+{
+     static char mode_str[ 11 ];
+     int bits;
+
+     bits = mode / 010000;
+     bits = bits * 010000;
+     bits = mode - bits;
+
+     /* File type */
+
+     if ( S_ISBLK( mode ) )
+     {
+          mode_str[ 0 ] = 'b';
+     }
+     else if ( S_ISCHR( mode ) )
+     {
+          mode_str[ 0 ] = 'c';
+     }
+     else if ( S_ISDIR( mode ) )
+     {
+          mode_str[ 0 ] = 'd';
+     }
+     else if ( S_ISFIFO( mode ) )
+     {
+          mode_str[ 0 ] = 'p';
+     }
+     else if ( S_ISLNK( mode ) )
+     {
+          mode_str[ 0 ] = 'l';
+     }
+     else if ( S_ISREG( mode ) )
+     {
+          mode_str[ 0 ] = '-';
+     }
+     else if ( S_ISSOCK( mode ) )
+     {
+          mode_str[ 0 ] = 's';
+     }
+     else  /* Unknown */
+     {
+          mode_str[ 0 ] = '?';
+     }
+
+     /* Owner */
+
+     if ( bits & 0400 )
+     {
+          mode_str[ 1 ] = 'r';
+     }
+     else
+     {
+          mode_str[ 1 ] = '-';
+     }
+     if ( bits & 0200 )
+     {
+          mode_str[ 2 ] = 'w';
+     }
+     else
+     {
+          mode_str[ 2 ] = '-';
+     }
+     if ( bits & 0100 )
+     {
+          if ( bits & 04000 )
+          {
+               mode_str[ 3 ] = 's';
+          }
+          else
+          {
+               mode_str[ 3 ] = 'x';
+          }
+     }
+     else
+     {
+          if ( bits & 04000 )
+          {
+               mode_str[ 3 ] = 'S';
+          }
+          else
+          {
+               mode_str[ 3 ] = '-';
+          }
+     }
+
+     /* Group */
+
+     if ( bits & 040 )
+     {
+          mode_str[ 4 ] = 'r';
+     }
+     else
+     {
+          mode_str[ 4 ] = '-';
+     }
+     if ( bits & 020 )
+     {
+          mode_str[ 5 ] = 'w';
+     }
+     else
+     {
+          mode_str[ 5 ] = '-';
+     }
+     if ( bits & 010 )
+     {
+          if ( bits & 02000 )
+          {
+               mode_str[ 6 ] = 's';
+          }
+          else
+          {
+               mode_str[ 6 ] = 'x';
+          }
+     }
+     else
+     {
+          if ( bits & 02000 )
+          {
+               mode_str[ 6 ] = 'S';
+          }
+          else
+          {
+               mode_str[ 6 ] = '-';
+          }
+     }
+
+     /* World */
+
+     if ( bits & 04 )
+     {
+          mode_str[ 7 ] = 'r';
+     }
+     else
+     {
+          mode_str[ 7 ] = '-';
+     }
+     if ( bits & 02 )
+     {
+          mode_str[ 8 ] = 'w';
+     }
+     else
+     {
+          mode_str[ 8 ] = '-';
+     }
+     if ( bits & 01 )
+     {
+          if ( bits & 01000 )
+          {
+               mode_str[ 9 ] = 't';
+          }
+          else
+          {
+               mode_str[ 9 ] = 'x';
+          }
+     }
+     else
+     {
+          if ( bits & 01000 )
+          {
+               mode_str[ 9 ] = 'T';
+          }
+          else
+          {
+               mode_str[ 9 ] = '-';
+          }
+     }
+
+     mode_str[ 10 ] = 0;
+     return mode_str;
 }
 
 #endif
