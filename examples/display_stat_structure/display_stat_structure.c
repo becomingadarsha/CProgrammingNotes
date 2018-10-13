@@ -25,12 +25,12 @@
 */
 
 #define MAJOR( x ) \
-	( ( unsigned long int )( ( ( ( x ) >> 31 >>1 ) & 0xfffff000 ) | \
- ( ( ( x ) >> 8 ) & 0x00000fff ) ) )
+	( ( unsigned long int )( ( ( ( x ) >> 32 ) & 0xFFFFF000 ) | \
+ ( ( ( x ) >> 8 ) & 0x00000FFF ) ) )
 
 #define MINOR( x ) \
-	( ( unsigned long int )( ( ( ( x ) >> 12 ) & 0xffffff00 ) | ( ( x ) & \
- 0x000000ff ) ) )
+	( ( unsigned long int )( ( ( ( x ) >> 12 ) & 0xFFFFFF00 ) | ( ( x ) & \
+ 0x000000FF ) ) )
 
 /* Function prototypes: */
 
@@ -49,6 +49,8 @@ const char *mode_string( mode_t mode );
 
 int display_stat_structure( const struct stat *ptr )
 {
+     time_t tmp;
+
      if ( ptr == NULL )
      {
           return 1;  /* Error. */
@@ -65,7 +67,7 @@ int display_stat_structure( const struct stat *ptr )
 
      /* Protection bits: */
 
-     printf( "   st_mode: %lo, string: %s\n", ptr->st_mode,
+     printf( "   st_mode: 0%lo, string: %s\n", ptr->st_mode,
              mode_string( ptr->st_mode ) );
 
      /* Number of hard links to this file: */
@@ -99,15 +101,18 @@ int display_stat_structure( const struct stat *ptr )
 
      /* Last access time: */
 
-     printf( "  st_atime: %s", ctime( &( ptr->st_atime ) ) );
+     tmp = ptr->st_atime;
+     printf( "  st_atime: %s", ctime( &tmp ) );
 
      /* Last modification time: */
 
-     printf( "  st_mtime: %s", ctime( &( ptr->st_mtime ) ) );
+     tmp = ptr->st_mtime;
+     printf( "  st_mtime: %s", ctime( &tmp ) );
 
      /* Time of last status change: */
 
-     printf( "  st_ctime: %s", ctime( &( ptr->st_ctime ) ) );
+     tmp = ptr->st_ctime;
+     printf( "  st_ctime: %s", ctime( &tmp ) );
 
      return 0;  /* Success. */
 }
