@@ -160,7 +160,7 @@ A for() loop does not really need to use every or even any of the three
 sections.  The following loop would run forever unless a break statement was
 used somewhere in the code in the loop:
 
-for( ;;; )
+for( ;; )
 {
      ...code goes here...
 }
