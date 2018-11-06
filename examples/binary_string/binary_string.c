@@ -21,7 +21,7 @@
 
      It took 5 days to write this file and get rid of all the bugs.
 
-     It has 1,467 lines of code.  It's just a boring box of nuts
+     It has 1,476 lines of code.  It's just a boring box of nuts
      and bolts, but a must have for anyone that works with bits.
 
 */
