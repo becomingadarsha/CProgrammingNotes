@@ -81,7 +81,8 @@ void binary_string_suppress_leading_zeros( void )
 const char *int8_to_binary_string( const char num )
 {
      static char str[ 9 ];
-     char count, pos;
+     char pos;
+     int count;
 
      if ( binary_string_show_zeros != 0 && binary_string_show_zeros != 1 )
      {
@@ -123,7 +124,7 @@ const char *int8_to_binary_string( const char num )
 const char *int16_to_binary_string( const short int num )
 {
      static char str[ 18 ];
-     char count;
+     int count;
      short int pos;
 
      if ( binary_string_show_zeros !=0 && binary_string_show_zeros != 1 )
@@ -236,7 +237,7 @@ const char *int16_to_binary_string( const short int num )
 const char *int32_to_binary_string( const long int num )
 {
      static char str[ 36 ];
-     char count;
+     int count;
      long int pos;
 
      if ( binary_string_show_zeros !=0 &&
@@ -467,7 +468,7 @@ const char *int32_to_binary_string( const long int num )
 const char *int64_to_binary_string( const long long int num )
 {
      static char str[ 72 ];
-     char count;
+     int count;
      long long int pos;
 
      if ( binary_string_show_zeros != 0 &&
@@ -1075,7 +1076,8 @@ const char *int64_to_binary_string( const long long int num )
 
 int binary_string_to_int8( const char *str, char *num )
 {
-     char bit_pos, bit_str[ 9 ], build_num, exit_loop, factor;
+     char bit_str[ 9 ], build_num, exit_loop, factor;
+     int bit_pos;
      long int str_pos;
 
      if ( str == NULL || num == NULL )
@@ -1086,7 +1088,8 @@ int binary_string_to_int8( const char *str, char *num )
      {
           return ( -1 );  /* An empty string is an invalid argument. */
      }
-     bit_pos = build_num = exit_loop = 0;
+     bit_pos = 0;
+     build_num = exit_loop = 0;
      factor = 1;
      str_pos = 0;
      do
@@ -1171,7 +1174,8 @@ int binary_string_to_int8( const char *str, char *num )
 
 int binary_string_to_int16( const char *str, short int *num )
 {
-     char bit_pos, bit_str[ 17 ], exit_loop;
+     char bit_str[ 17 ], exit_loop;
+     int bit_pos;
      short int build_num, factor;
      long int str_pos;
 
@@ -1183,7 +1187,8 @@ int binary_string_to_int16( const char *str, short int *num )
      {
           return ( -1 );  /* An empty string is an invalid argument. */
      }
-     bit_pos = exit_loop = 0;
+     bit_pos = 0;
+     exit_loop = 0;
      build_num = 0;
      factor = 1;
      str_pos = 0;
@@ -1272,7 +1277,8 @@ int binary_string_to_int16( const char *str, short int *num )
 
 int binary_string_to_int32( const char *str, long int *num )
 {
-     char bit_pos, bit_str[ 33 ], exit_loop;
+     char bit_str[ 33 ], exit_loop;
+     int bit_pos;
      long int build_num, factor, str_pos;
 
      if ( str == NULL || num == NULL )
@@ -1283,7 +1289,8 @@ int binary_string_to_int32( const char *str, long int *num )
      {
           return ( -1 );  /* An empty string is an invalid argument. */
      }
-     bit_pos = exit_loop = 0;
+     bit_pos = 0;
+     exit_loop = 0;
      build_num = str_pos = 0;
      factor = 1;
      do
@@ -1372,7 +1379,8 @@ int binary_string_to_int32( const char *str, long int *num )
 
 int binary_string_to_int64( const char *str, long long int *num )
 {
-     char bit_pos, bit_str[ 65 ], exit_loop;
+     char bit_str[ 65 ], exit_loop;
+     int bit_pos;
      long long int build_num, factor;
      long int str_pos;
 
@@ -1384,7 +1392,8 @@ int binary_string_to_int64( const char *str, long long int *num )
      {
           return ( -1 );  /* An empty string is an invalid argument. */
      }
-     bit_pos = exit_loop = 0;
+     bit_pos = 0;
+     exit_loop = 0;
      build_num = 0;
      str_pos = 0;
      factor = 1;
