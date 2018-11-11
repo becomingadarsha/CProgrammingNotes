@@ -161,7 +161,7 @@ You might want to write that into a function.
 
 # 10. How can I reverse the order of the bytes in a string?
 
-See examples/strrev/strrev.c [Here](https://github.com/CProgrammingFBGroup/CProgrammingNotes/blob/master/examples/strrev/strrev.c)
+See examples/strrev/strrev.c [here](https://github.com/CProgrammingFBGroup/CProgrammingNotes/blob/master/examples/strrev/strrev.c)
 
 ## Another-C-FAQ
 
