@@ -314,14 +314,21 @@ if ( num < 1 || num > 5 )
 In all likelihood, a program will probably ask the user to try entering their
 input again instead of exiting and will use a loop to do this:
 
+Presume: int exit_loop, choice;
+
 exit_loop = 0;
 do
 {
-     printf( "Please enter your choice.\n>> " );
+     printf( "Please enter a number between 1 and 5.\n>> " );
      fflush( stdout );
      if ( scanf( "%d", &choice ) != 1 )
      {
-          fprintf( stderr, "That is not an acceptable choice.\n" );
+          fprintf( stderr, "That is not acceptable input.\n" );
+
+          /* Clear any unacceptable input from the buffer. */
+
+          while( !feof( stdin ) && !ferror( stdin ) &&
+                 fgetc( stdin ) != '\n' );
      }
      else if ( choice < 1 || choice > 5 )
      {
@@ -331,6 +338,15 @@ do
      {
           exit_loop = 1;
      }
+
+     /* This could happen if the user */
+     /* redirects a file to stdin.    */
+
+     if ( feof( stdin ) || ferror( stdin ) )
+     {
+          exit( EXIT_FAILURE );
+     }
+
 }    while( !exit_loop );
 
 The function fflush() was called beause the string being printed to stdout
