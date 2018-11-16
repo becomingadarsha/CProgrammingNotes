@@ -22,7 +22,7 @@
      linked lists.  It may be useful to intermediate and advanced
      level users that don't want to have to type in all this code.
 
-     This file is 93,526 bytes long and contains 3,775 lines.
+     This file is 93,541 bytes long and contains 3,775 lines.
 
 */
 
@@ -757,7 +757,7 @@ int free_node( node_t *node )
      {
           tmp = tmp->next;
      }
-     if ( tmp == last_free_node )  /* Not found. */
+     if ( tmp == last_free_node && tmp != node )  /* Not found. */
      {
           /* See if it is in 'list'. */
 
